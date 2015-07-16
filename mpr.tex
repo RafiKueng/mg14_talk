@@ -1,3 +1,14 @@
+%
+% TODO
+%
+% - up to date image of SL UI
+%
+%
+%
+%
+%
+%
+
 
 %\documentclass[aspectratio=1610]{beamer}
 \documentclass{beamer}
@@ -209,7 +220,11 @@
 
 \end{frame}
 
-%\subsection{Fermat’s Principle}
+%\subsection{setup}
+\begin{frame}
+	\frametitle{Setup}
+	\includegraphics[width=\textwidth]{imgs/sketch_arrtime}
+\end{frame}
 
 
 \begin{frame}
@@ -226,14 +241,6 @@
     $$t\left[X\right] = \frac{1}{c}\int_{t_1}^{t_2}n\left(\vec{x}\left(t\right)\right)\sqrt{1+\left(\frac{\text{d}\vec{x}\left(t'\right)}{\text{d}t'}\right)^2}\text{d}t'$$
     Path $X$ where $t$ stationary.
   \end{block}
-\end{frame}
-
-
-
-%\subsection{setup}
-\begin{frame}
-	\frametitle{Setup}
-	\includegraphics[width=\textwidth]{imgs/sketch_arrtime}
 \end{frame}
 
 
@@ -280,17 +287,17 @@
 
 %\subsection*{Arrival Time Surface}
 
-\begin{frame}
-  \frametitle{Arrival Time Surface}
-  \begin{columns}[c]
-  	\begin{column}{0.45\textwidth}
-	  	\includegraphics[width=\textwidth]{imgs/arriv_2}
-  	\end{column}
-  	\begin{column}{0.45\textwidth}
-	  	\includegraphics[width=\textwidth]{imgs/screenshot}
-  	\end{column}
-  \end{columns}
-\end{frame}
+%\begin{frame}
+  %\frametitle{Arrival Time Surface}
+  %\begin{columns}[c]
+  	%\begin{column}{0.45\textwidth}
+	  	%\includegraphics[width=\textwidth]{imgs/arriv_2}
+  	%\end{column}
+  	%\begin{column}{0.45\textwidth}
+	  	%\includegraphics[width=\textwidth]{imgs/screenshot}
+  	%\end{column}
+  %\end{columns}
+%\end{frame}
 
 
 \imgframe{imgs/fig0}
@@ -380,7 +387,7 @@
    \begin{itemize}
      \item Use simulated lenses
      \item Let volunteers model them
-     \item Recover Einstein Radii
+     \item Recover and compare Einstein Radii $\Theta_\text{E}$
      \item Volunteers perform well!
    \end{itemize}
 
@@ -435,15 +442,24 @@
 
 
 
-\section{Outlook}
+\section{Conclusions and Outlook}
 
 \begin{frame}
-  \frametitle{Outlook}
-  We are currently working on:
+  \frametitle{Conclusions and Outlook}
+	Conclusions:
   \begin{itemize}
-  	\item Fit parametrized models to the free-form mass distributions (Lucy Oswald)
+		\item SL is set up and works
+	\end{itemize}
+	
+	~\\
+  
+	We are currently working on:
+  \begin{itemize}
+		\item Increase the number of users
+  	\item Fit parametrized models to the free-form mass distributions\footnote{Lucy Oswald; University of Oxford}
     \item Determination of photometric red shifts
-    \item Estimate stellar populations (using galfit, SExtractor)
+    \item Estimate stellar populations (using galfit, SExtractor)\footnote{Dominik Leier; University of Bologna}
+		\item Your idea!
   \end{itemize}
 \end{frame}
 

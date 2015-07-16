@@ -97,6 +97,42 @@
 \newcommand{\aitem}{\item[$\Rightarrow$]}
 \newcommand{\nitem}{\item[]}
 
+\usepackage{ifthen}
+\newcommand{\ani}[3]{
+  \foreach \i [count=\ni] in {#2, ..., #3} {%
+    \ifthenelse{\i=#2}{%
+      \aniframe{\i}{#1}%
+    }{\ifthenelse{\i=#3} {
+      \aniframe{\i}{#1}%
+    }{
+      \aniframe[\transduration{0.1}]{\i}{#1}%
+    }}%
+  }%
+}
+
+\newcommand{\aniframe}[3][]{
+  \begin{frame}[noframenumbering]
+    #1
+    \makebox[\linewidth]{\parbox{\paperwidth}{
+      \includegraphics[width=\paperwidth]{#3#2}
+    }}
+  \end{frame}
+}
+
+
+\usepackage{textpos}
+\newcommand{\imgframe}[1]{%
+  \begin{frame}%
+	\begin{textblock*}{0cm}(-1cm,-2.5cm)%
+    %\makebox[\linewidth]{\parbox{\paperwidth}{%
+      \includegraphics[width=\paperwidth]{#1}%
+    %}}%
+	\end{textblock*}%
+  \end{frame}%
+}
+
+
+
 \begin{document}
 {
 \setbeamertemplate{logo}{}
@@ -118,8 +154,8 @@
 		\item Robots are not very good at finding and modelling lenses
 		\item Human intervention is needed! \\~\\
 		
-		\aitem SpaceWarps Citizen Science project
-		\nitem (50'000 volunteers; 7,5 mio classifications; 51 candidates)
+		\aitem SpaceWarps citizen science project
+		\nitem (50'000 volunteers; 11 mio classifications; 51 candidates)
 	
     %\item Gravitational Lenses (GL) hard to find
     %\item Let volunteers help find them: SpaceWarps
@@ -133,20 +169,45 @@
   \frametitle{SpaceWarps Results and Outlook}
   \begin{itemize}
 	
-		\item CHFT legacy survey: 150 \sqdeg
-		\item 51 candidates found ($\approx$ 30 good ones)
-		\aitem 1 lens every few \sqdeg \\~
+		\item CHFT Legacy Survey: 150 \sqdeg
+		\item 59 candidates found (29 promising)\footnote{[A. More et al; arXiv:1504.05587]}
+		\aitem $\approx$ 1 lens every few \sqdeg \\~
 		
 		\item DES, PanStarrs; later LSST, Euclid
+		\item more area, better resolution
 		\aitem 10'000 lenses over 10 years ($\approx$ one per hour)
 
   \end{itemize}
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Outlook}
+	
+	\textbf{A lot of computational and manpower needed}
+	
+  \begin{itemize}
+			
+		\nitem Detecting lenses:
+		\item Robots making progress (RingFinder; ArcFinder)
+		\nitem in combination with
+		\item Future SpaceWarps runs \\~\\
+		
+		\nitem Post processing?
+		\item Robots not there (yet?)
+		\aitem Citizen science: SpaghettiLens
+
+  \end{itemize}
+\end{frame}
+
+
+
 
 \section{Theory}
+\begin{frame}
+  \frametitle{Theory}
 
+\end{frame}
 
 %\subsection{Fermat’s Principle}
 
@@ -177,8 +238,8 @@
 
 
 \begin{frame}
-	\frametitle{light travel time}
-	\begin{block}{Fermat’s Principle}
+	\frametitle{Light Travel Time}
+	\begin{block}{Light travel time}
 		\begin{eqnarray}
 			t(x,y) &=& t_\text{geom} + t_\text{grav} \\
 			t_\text{geom} &\propto & (x - x_s)^2 + (y-y_s)^2 \\
@@ -187,6 +248,34 @@
 	\end{block}
 \end{frame}
 
+
+
+\begin{frame}
+  \begin{align}
+    A_t &= A_\text{geom} + A_\text{grav}\\
+    A_\text{geom} &= \frac{1}{2}\left(x^2+y^2\right)\\
+    \nabla^2 A_\text{grav}\left(x,y\right) &= -2\kappa\left(x,y\right)\\
+    A           &= \frac{cD_L}{(1+z_L)^2} \frac{D_{LS}}{D_S} \times t \\
+    \kappa(x,y) &= \frac{4\pi G}{c^2} \frac{D_L}{1+z_L} \frac{D_{LS}}{D_S} \times \Sigma(x,y)
+  \end{align}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Alternative explanation}
+	
+\end{frame}
+
+
+\ani{ani/2/n1-}{1}{42}
+\ani{ani/2/n2-}{41}{47}
+\ani{ani/2/n3-}{46}{50}
+
+\begin{frame}
+	\footnotesize{Simulation program: \texttt{gravlens} by C. Huwiler}
+	
+\end{frame}
 
 
 %\subsection*{Arrival Time Surface}
@@ -202,6 +291,45 @@
   	\end{column}
   \end{columns}
 \end{frame}
+
+
+\imgframe{imgs/fig0}
+\imgframe{imgs/fig3}
+
+\begin{frame}
+  \begin{columns}[T]
+    \begin{column}{5.5cm}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{imgs/sl-3}
+      \end{figure}
+    \end{column}
+    \begin{column}{5.5cm}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{imgs/real3-2}
+        \caption{ASW0004q9e (SpaceWarps)}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\imgframe{imgs/fig1}
+
+\begin{frame}
+  \begin{columns}[T]
+    \begin{column}{5.5cm}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{imgs/sl-1}
+      \end{figure}
+    \end{column}
+    \begin{column}{5.5cm}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{imgs/real1}
+        \caption{ASW0004q9e (SpaceWarps)}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 
 
 
@@ -229,34 +357,34 @@
 
 
 
-\section{Results}
-%\subsection{SpaceWarps Volunteers}
+%\section{Results}
+%%\subsection{SpaceWarps Volunteers}
+%
+ %\begin{frame}
+   %\frametitle{SpaceWarps Setup \& Results}
+   %\begin{itemize}
+     %\item CFHT Legacy Survey
+     %\item about 11 million classifications
+     %\item 29 promising (59 total) new lens candidates
+   %\end{itemize}
+   %
+   %\begin{block}{SpaceWarps: II New Gravitational Lens Candidates...\footnote{arxiv:1504.05587}}
+     %\includegraphics[width=\textwidth]{imgs/paper_sw2}
+   %\end{block}
+%
+ %\end{frame}
+
 
  \begin{frame}
-   \frametitle{SpaceWarps Setup \& Results}
+   \frametitle{SpaghettiLens Results: Test of Performance}
    \begin{itemize}
-     \item CFHT Legacy Survey
-     \item about 11 million classifications
-     \item 29 promising (59 total) new lens candidates
-   \end{itemize}
-   
-   \begin{block}{SpaceWarps: II New Gravitational Lens Candidates...\footnote{arxiv:1504.05587}}
-     \includegraphics[width=\textwidth]{imgs/paper_sw2}
-   \end{block}
-
- \end{frame}
-
-
- \begin{frame}
-   \frametitle{SpaghettiLens Results: Tests of Perfomance}
-   \begin{itemize}
-     \item use simulated lenses
-     \item let volunteers model them
-     \item recover Einstein Radii
+     \item Use simulated lenses
+     \item Let volunteers model them
+     \item Recover Einstein Radii
      \item Volunteers perform well!
    \end{itemize}
 
-   \begin{block}{Gravitational Lens Modelling in a Citizen Science Context\footnote{arxiv:1502.00008}}
+   \begin{block}{arxiv:1502.00008}
      \includegraphics[width=\textwidth]{imgs/paper_sl1}
    \end{block}
 
@@ -270,11 +398,11 @@
    \begin{columns}[c]
    \begin{column}{0.5\textwidth}
      \begin{itemize}
-       \item lensing mass against the stellar mass of the candidate lens galaxies
-       \item stellar mass fraction of order 20 percent
-       \item with decreasing trend for the most massive galaxies
-       \item expected for early type galaxies
-       \item outliers? Maybe non-lenses (not yet spectroscopically confirmed)
+       \item Lensing mass against the stellar mass of the candidate lens galaxies
+       \item Stellar mass fraction of order 20 percent
+       \item With decreasing trend for the most massive galaxies
+       \item Expected for early type galaxies
+       \item Outliers? Maybe non-lenses (not yet spectroscopically confirmed)
      \end{itemize}
  
    \end{column}\begin{column}{0.5\textwidth}
@@ -313,9 +441,9 @@
   \frametitle{Outlook}
   We are currently working on:
   \begin{itemize}
-  	\item fit parametrized models to the free-form mass distributions (Lucy Oswald)
-    \item determination of photometric red shifts
-    \item estimate stellar populations (using galfit, SExtractor)
+  	\item Fit parametrized models to the free-form mass distributions (Lucy Oswald)
+    \item Determination of photometric red shifts
+    \item Estimate stellar populations (using galfit, SExtractor)
   \end{itemize}
 \end{frame}
 
@@ -337,18 +465,6 @@
 \begin{frame}
   \frametitle{Appendix}
 \end{frame}
-
-\begin{frame}
-  \begin{align}
-    A_t &= A_\text{geom} + A_\text{grav}\\
-    A_\text{geom} &= \frac{1}{2}\left(x^2+y^2\right)\\
-    \nabla^2 A_\text{grav}\left(x,y\right) &= -2\kappa\left(x,y\right)\\
-    A           &= \frac{cD_L}{(1+z_L)^2} \frac{D_{LS}}{D_S} \times t \\
-    \kappa(x,y) &= \frac{4\pi G}{c^2} \frac{D_L}{1+z_L} \frac{D_{LS}}{D_S} \times \Sigma(x,y)
-  \end{align}
-  
-\end{frame}
-
 
 
 

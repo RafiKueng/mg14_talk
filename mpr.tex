@@ -1,5 +1,6 @@
 
-\documentclass[aspectratio=1610]{beamer}
+%\documentclass[aspectratio=1610]{beamer}
+\documentclass{beamer}
 
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
@@ -50,8 +51,8 @@
 \mode<presentation>
 
 
-\title{SpaghettiLens}
-\subtitle{Gravitational Lens Modelling}
+\title{Lensing Galaxies in the CFHT Legacy Survey}
+%\subtitle{Gravitational Lens Modelling}
 \author[R. Küng et al]{
   \underline{Rafael Küng}\inst{1}
   \footnotesize{
@@ -68,15 +69,16 @@
   }
 }
 
-\institute[UZH]{
+\institute[UZH]{\tiny
   \inst{1} Physik--Institut, University of Zurich, Zurich, Switzerland \\
   \inst{2} Zooniverse, c/o Astrophysics Department, University of Oxford, Oxford, UK\\
   \inst{3} Exascale Research Computing Lab, Bruyeres-le-Chatel, France\\
   \inst{4} Kavli Institute for Particle Astrophysics and Cosmology, Stanford University, Stanford, USA\\
   \inst{5} Kavli Institute for the Physics and Mathematics of the Universe, University of Tokyo, Kashiwa-shi, Japan\\
-  \inst{6}Sub-department of Astrophysics, University of Oxford, Oxford, UK}
+  \inst{6} Sub-department of Astrophysics, University of Oxford, Oxford, UK
+	}
 
-\date[26.09.13]{26. Sept 2013}
+\date[17.07.2015]{MG14 -- 17. July 2015}
 %\logo{\pgfimage[width=3cm]{imgs/uzh}}
 \titlegraphic{\includegraphics[width=4cm]{imgs/uzh}}
 \subject{Modelling}
@@ -91,8 +93,9 @@
 \newcommand{\subcirc}{{\lower.33ex\hbox{$\circ$}}}
 \newcommand{\subbullet}{{\lower.33ex\hbox{$\bullet$}}}
 
-
-
+\newcommand{\sqdeg}{deg$^2$}
+\newcommand{\aitem}{\item[$\Rightarrow$]}
+\newcommand{\nitem}{\item[]}
 
 \begin{document}
 {
@@ -105,22 +108,41 @@
 
 
 \section*{Motivation}
+
 \begin{frame}
   \frametitle{Motivation}
   \begin{itemize}
-    \item Gravitational Lenses (GL) hard to find
-    \item Let volunteers help find them: SpaceWarps
-    \item But post processing? SpaghettiLens
+	
+		\item Strong lensing analyzes wide field surveys \\~\\
+		
+		\item Robots are not very good at finding and modelling lenses
+		\item Human intervention is needed! \\~\\
+		
+		\aitem SpaceWarps Citizen Science project
+		\nitem (50'000 volunteers; 7,5 mio classifications; 51 candidates)
+	
+    %\item Gravitational Lenses (GL) hard to find
+    %\item Let volunteers help find them: SpaceWarps
+    %\item But post processing? SpaghettiLens
   \end{itemize}
 \end{frame}
 
 
 
-\section*{Outline}
 \begin{frame}
-  \frametitle{Outline}
-  \tableofcontents%[pausesections]
+  \frametitle{SpaceWarps Results and Outlook}
+  \begin{itemize}
+	
+		\item CHFT legacy survey: 150 \sqdeg
+		\item 51 candidates found ($\approx$ 30 good ones)
+		\aitem 1 lens every few \sqdeg \\~
+		
+		\item DES, PanStarrs; later LSST, Euclid
+		\aitem 10'000 lenses over 10 years ($\approx$ one per hour)
+
+  \end{itemize}
 \end{frame}
+
 
 
 \section{Theory}

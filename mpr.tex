@@ -166,7 +166,6 @@
 		\item Human intervention is needed! \\~\\
 		
 		\aitem SpaceWarps citizen science project
-		\nitem (50'000 volunteers; 11 mio classifications; 51 candidates)
 	
     %\item Gravitational Lenses (GL) hard to find
     %\item Let volunteers help find them: SpaceWarps
@@ -181,10 +180,11 @@
   \begin{itemize}
 	
 		\item CHFT Legacy Survey: 150 \sqdeg
+		\item 50'000 volunteers; 11 mio classifications
 		\item 59 candidates found (29 promising)\footnote{[A. More et al; arXiv:1504.05587]}
 		\aitem $\approx$ 1 lens every few \sqdeg \\~
 		
-		\item DES, Pan-STARRS (now); LSST, Euclid, ... (2020ies)
+		\item DES, Pan-STARRS (now); LSST, Euclid, ... (2020+)
 		\item more area, better resolution, deeper images
 		\aitem 10'000 lenses over 10 years ($\approx$ one per hour)
 
@@ -223,50 +223,50 @@
 %\subsection{setup}
 \begin{frame}
 	\frametitle{Setup}
-	\includegraphics[width=\textwidth]{imgs/sketch_arrtime}
+	\includegraphics[width=\textwidth]{imgs/skizze_theo}
 \end{frame}
 
-
-\begin{frame}
-  \frametitle{Fermat’s Principle}
-  \begin{block}{Fermat’s Principle\footnote{Ghatak, Ajoy (2009), Optics}}
+%
+%\begin{frame}
+  %\frametitle{Fermat’s Principle}
+  %\begin{block}{Fermat’s Principle\footnote{Ghatak, Ajoy (2009), Optics}}
+    %%
+    %Rays of light traverse the path of stationary optical length\\
+    %with respect to variations of the path.
     %
-    Rays of light traverse the path of stationary optical length\\
-    with respect to variations of the path.
-    
-  \end{block}
-
-  \begin{block}{Fermat’s Principle}
-    Time $t$ for path $X$:
-    $$t\left[X\right] = \frac{1}{c}\int_{t_1}^{t_2}n\left(\vec{x}\left(t\right)\right)\sqrt{1+\left(\frac{\text{d}\vec{x}\left(t'\right)}{\text{d}t'}\right)^2}\text{d}t'$$
-    Path $X$ where $t$ stationary.
-  \end{block}
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Light Travel Time}
-	\begin{block}{Light travel time}
-		\begin{eqnarray}
-			t(x,y) &=& t_\text{geom} + t_\text{grav} \\
-			t_\text{geom} &\propto & (x - x_s)^2 + (y-y_s)^2 \\
-			t_\text{grav} &=& \left\langle t_\text{grav}(x_\subcirc,y_\subcirc) \right\rangle + (1+z_L) \frac{2G}{c^3} M(x_\subbullet,y_\subbullet)
-		\end{eqnarray}
-	\end{block}
-\end{frame}
-
-
-
-\begin{frame}
-  \begin{align}
-    A_t &= A_\text{geom} + A_\text{grav}\\
-    A_\text{geom} &= \frac{1}{2}\left(x^2+y^2\right)\\
-    \nabla^2 A_\text{grav}\left(x,y\right) &= -2\kappa\left(x,y\right)\\
-    A           &= \frac{cD_L}{(1+z_L)^2} \frac{D_{LS}}{D_S} \times t \\
-    \kappa(x,y) &= \frac{4\pi G}{c^2} \frac{D_L}{1+z_L} \frac{D_{LS}}{D_S} \times \Sigma(x,y)
-  \end{align}
-  
-\end{frame}
+  %\end{block}
+%
+  %\begin{block}{Fermat’s Principle}
+    %Time $t$ for path $X$:
+    %$$t\left[X\right] = \frac{1}{c}\int_{t_1}^{t_2}n\left(\vec{x}\left(t\right)\right)\sqrt{1+\left(\frac{\text{d}\vec{x}\left(t'\right)}{\text{d}t'}\right)^2}\text{d}t'$$
+    %Path $X$ where $t$ stationary.
+  %\end{block}
+%\end{frame}
+%
+%
+%\begin{frame}
+	%\frametitle{Light Travel Time}
+	%\begin{block}{Light travel time}
+		%\begin{eqnarray}
+			%t(x,y) &=& t_\text{geom} + t_\text{grav} \\
+			%t_\text{geom} &\propto & (x - x_s)^2 + (y-y_s)^2 \\
+			%t_\text{grav} &=& \left\langle t_\text{grav}(x_\subcirc,y_\subcirc) \right\rangle + (1+z_L) \frac{2G}{c^3} M(x_\subbullet,y_\subbullet)
+		%\end{eqnarray}
+	%\end{block}
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+  %\begin{align}
+    %A_t &= A_\text{geom} + A_\text{grav}\\
+    %A_\text{geom} &= \frac{1}{2}\left(x^2+y^2\right)\\
+    %\nabla^2 A_\text{grav}\left(x,y\right) &= -2\kappa\left(x,y\right)\\
+    %A           &= \frac{cD_L}{(1+z_L)^2} \frac{D_{LS}}{D_S} \times t \\
+    %\kappa(x,y) &= \frac{4\pi G}{c^2} \frac{D_L}{1+z_L} \frac{D_{LS}}{D_S} \times \Sigma(x,y)
+  %\end{align}
+  %
+%\end{frame}
 
 
 \begin{frame}
@@ -350,6 +350,18 @@
 \end{frame}
 
 
+\begin{frame}
+	\frametitle{SpaghettiLens: Model Result}
+  \url{http://labs.spacewarps.org/spaghetti/model/AJIBCHQ6EM}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{SpaghettiLens: Model Tree}
+  \includegraphics[width=\textwidth]{imgs/modeltree}
+
+\end{frame}
 
 
 
@@ -378,6 +390,7 @@
      \item Let volunteers model them
      \item Recover and compare Einstein Radii $\Theta_\text{E}$
      \item Volunteers perform well!
+		 \item $\Theta_\text{E}$ is slightly over estimated
    \end{itemize}
 
    \begin{block}{arxiv:1502.00008}
@@ -446,7 +459,8 @@
   \begin{itemize}
 		\item Increase the number of users
   	\item Fit parametrized models to the free-form mass distributions\footnote{Lucy Oswald; University of Oxford}
-    \item Determination of photometric red shifts
+		\item Fit source profile to optimize resemblance to images
+    \item Determination of photometric red shifts$^3$
     \item Estimate stellar populations (using galfit, SExtractor)\footnote{Dominik Leier; University of Bologna}
 		\item Your idea!
   \end{itemize}
@@ -457,7 +471,7 @@
 \subsection*{Questions?}
 
 \begin{frame}
-  \frametitle{Questions?}
+  \frametitle{Thank you for your attention}
   Questions? \\
   rafael.kueng@uzh.ch
 \end{frame}
